@@ -1,0 +1,71 @@
+
+<app-nav></app-nav>
+<main role="main" >
+  <div class="container"  >
+    <div class="row" >
+      <form [formGroup]="tenderAddForm"  (ngSubmit)="submit()">
+        <h2  class="mt-3 pt-3">YENİ BİR İHALE EKLEYİN</h2>
+        <div class="formGroup"  >
+          <label for="description">İhalenize bir başlık girin:</label>
+          <input  type="text" id="description" formControlName="description" class="form-control"  autofocus>
+          
+          <br>
+        </div>
+        <div class="formGroup">
+          <label for="startDate">İhalenize bir başlangıç tarihi girin:</label>
+          <input  type="dateDate" required pattern="\d{4}-\d{2}-\d{2}" id="startDate" formControlName="startDate" class="form-control" placeholder="" autofocus>
+         <br>
+        </div>
+        <div class="formGroup">
+          <label for="endDate">İhalenize bir bitiş tarihi girin:</label>
+          <input  type="datedate"  required pattern="\d{4}-\d{2}-\d{2}" id="endDate" formControlName="endDate" class="form-control" placeholder="" autofocus>
+          <br>
+        </div>
+        <div class="formGroup">
+          <label for="category">İhalenize bir kategori belirleyin:</label>
+          <select class="form-control" id="category" formControlName="category" >
+            <option >Ev </option>
+            <option>Araba</option>
+            <option>Arsa</option>
+            <option>YenidenIhrac</option>
+            <option>Esya</option>
+            <option>Diger</option>
+          </select>
+          <br>
+        </div>
+        <div class="formGroup">
+          <label for="price">İhalenize bir başlangıç fiyatı belirleyin:</label>
+          <input  type="text" id="price" formControlName="price" class="form-control" placeholder="" autofocus>
+        <br>
+        </div>
+     
+        <div class="formGroup">
+       
+          <label for="status">İhalenizin durumunu belirleyin:</label>
+          <select class="form-control" id="status" formControlName="status" >
+            <option selected> </option>
+            <option >Aktif </option>
+          </select>
+          <br>
+        </div>
+        <div class="formGroup">
+          <label for="description2">İhalenize bir açıklama girin:</label>
+         <textarea  class="form-control" formControlName="description2" id="description2" placeholder="" autofocus></textarea>
+       <br>
+        </div>
+        <div class="formGroup">
+          <label for="url">İhalenize bir resim ekleyin:</label>
+          <input  type="file"  id="url" formControlName="url" class="form-control" (change)="onFileChange($event)"  >
+         <br>
+        </div>
+        <img [src]="imageSrc" *ngIf="imageSrc" style="height: 300px; width:500px">
+        <p class="card-text">BAŞLANGIÇ FİYATI: {{imageSrc}}</p>
+     <div class="container">
+      <button  type="submit" class=" btn btn-success btn-block" [disabled]="!tenderAddForm.valid"  >EKLE</button> 
+      <button type="reset" class="btn btn-danger  btn-block" >TEMİZLE</button>
+     </div>
+      </form>
+    </div>
+  </div>
+  
+  </main>

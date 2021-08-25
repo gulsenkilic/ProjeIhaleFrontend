@@ -1,0 +1,103 @@
+<app-nav></app-nav>
+<div class="container">
+  <br>
+  <h2>IHALE BİLGİLERİ</h2>
+  <table class="table table-bordered" style="border-color: black;">
+    <thead>
+      <tr>
+        <th>Ihale Numarası</th>
+        <th>Başlangıç Tarihi</th>
+        <th>Bitiş Tarihi</th>
+        <th>Kategori</th>
+        <th>Durum</th>
+        <th>Başlangıç Ücret</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{tender.tenderId}}</td>
+        <td>{{tender.startDate}}</td>
+        <td>{{tender.endDate}}</td>
+        <td>{{tender.category}}</td>
+        <td>{{tender.status}}</td>
+        <td>{{tender.price}}</td>
+
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+<br> <br>
+<div class="container">
+  <br>
+  <div class="table-responsive">
+    <h2>VERİLEN TEKLİFLER</h2>
+    <table class="table table-bordered" style="border-color: black;">
+      <thead>
+        <tr style="font-family: monospace; ">
+          <th>İhale Numarası</th>
+          <th>İhale Başlığı</th>
+          <th>Kullanıcı Id</th>
+          <th>Başlangıç Ücreti</th>
+          <th>Teklif</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bid of bids;">
+          <td>{{bid.tenderId}}</td>
+          <td>{{bid.tender.description}}</td>
+          <td>{{bid.userId}}</td>
+          <td>{{bid.tender.price}}</td>
+          <td>{{bid.bids}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div style="text-align: center;">
+  <main role="main">
+    <div class="container">
+      <div class="row">
+        <form [formGroup]="compAddForm" (ngSubmit)="addComp()">
+
+          <div class="formGroup">
+            <label for="tenderId">İhale Id:</label>
+            <select class="form-control" id="tenderId" formControlName="tenderId" >
+              <option> </option>
+              <option>{{tender.tenderId}}</option>
+
+            </select>
+            <br>
+          </div>
+          <div class="formGroup" >
+            <label for="userId">KULLANICI Id </label>
+            <select  class="form-control" id="userId" formControlName="userId" >
+              <option> </option>
+              <option  *ngFor="let bid of bids;">{{bid.userId}}
+              
+              </option>
+        </select>
+            <br>
+          </div>
+          <div class="formGroup">
+            <label for="price"> KULLANICI Teklifi:</label>
+            <select class="form-control" id="price" formControlName="price">
+              <option> </option>
+              <option *ngFor="let bid of bids;"> {{bid.bids}} </option>
+
+            </select>
+            <br>
+          </div>
+          
+          <div class="container">
+            <button type="submit" class=" btn btn-success btn-block">EKLE</button>
+            <button type="reset" class="btn btn-danger  btn-block">TEMİZLE</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>

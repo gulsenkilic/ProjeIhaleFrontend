@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+
+<div class="container">
+  <br>
+  <div class="table-responsive" >
+    <h2>TAMAMLANAN İHALELER</h2>
+  
+    <table class="table table-bordered" style="border-color: black; border: 4px solid black;">
+      <thead>
+        <tr style="font-family: monospace; ">
+          <th>İhale Numarası</th>
+          <th>Admin Id</th>
+          <th>İhale Başlığı</th>
+          <th>Kullanıcı Id</th>
+          <th>Başlangıç Ücreti</th>
+          <th>Kabul Edilen Teklif</th>
+          <th>İhale Durumu</th>
+          <th></th> 
+          <th></th>    
+        </tr>
+      </thead>  
+      <tbody >
+        <tr *ngFor="let comp of completes;">
+          <td>{{comp.tenderId}}</td>
+          <td>{{comp.tender.adminId}}</td>
+          <td>{{comp.tender.description}}</td>
+          <td>{{comp.userId}}</td>
+          <td>{{comp.tender.price}}</td>
+          <td>{{comp.price}}</td>
+          <td>{{comp.tender.status}}</td>
+          <td><button type="button" class="btn btn-success" routerLink="/tenderDetail/{{comp
+            .tenderId}} ">Detay</button></td>
+<td><button type="button" class="btn btn-danger" routerLink="/tenderbid/{{comp.tenderId}}" >Verilen Teklifler</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>
+

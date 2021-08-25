@@ -1,0 +1,41 @@
+<div class="container" style="text-align:center;">
+  <br>
+  <h1 style="text-align: center;">{{tender.description}} </h1>
+  <br>
+  <img class="img-thumbnail" src="{{tender.url}}" style="border-color: black; text-align: center;" alt="image" width="500" height="200"><br> 
+  <br> <br>
+<table class="table table-bordered" style="border-color: black;">
+  <tbody>
+    <tr>
+    <td>İHALE NUMARASI</td>
+    <td>{{tender.tenderId}}</td>   
+    </tr>
+    <tr>
+      <td>BAŞLANGIÇ TARİHİ</td>
+      <td>{{tender.startDate}}</td>   
+      </tr>
+      <tr>
+        <td>BİTİŞ TARİHİ</td>
+        <td>{{tender.endDate}}</td>   
+        </tr>
+        <tr>
+          <td>KATEGORİ</td>
+          <td>{{tender.category}}</td>   
+          </tr>
+          <tr>
+            <td>DURUM</td>
+            <td>{{tender.status}}</td>   
+            </tr>
+            <tr>
+              <td>BAŞLANGIÇ ÜCRETİ</td>
+              <td>{{tender.price}}</td>   
+              </tr>
+              <tr>
+                <td>AÇIKLAMA</td>
+                <td>{{tender.description2}}</td>   
+                </tr>
+               
+  </tbody>
+</table>
+</div>
+

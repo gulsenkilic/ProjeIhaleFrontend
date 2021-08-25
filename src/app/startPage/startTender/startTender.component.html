@@ -1,0 +1,22 @@
+
+<div class="container" >
+  <div class="row">
+  <div *ngFor="let tender of tenders" class="col-md-6">
+
+  <div class="card mb-4 shadow-sm">
+  <img class="card-img-top" src="{{tender.url}}" style="height: 225px; width:100%" alt="Card image top"> 
+  <div class="card-body">
+  <p class="card-text" style="font-size: x-large;">{{tender.description}}</p>
+  <p class="card-text">BAŞLANGIÇ FİYATI: {{tender.price}}</p>
+  <small class="text-muted"> KATEGORİ: {{tender.category}}</small>
+  <div class="d-flex justify-content between align-items-center">
+  <div class="btn-group" >
+  <button type="button" routerLink="userlogin"class="btn btn-primary" onclick="alert('LÜTFEN ÖNCE GİRİŞ YAPIN!')" >İhale Detayları</button>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>

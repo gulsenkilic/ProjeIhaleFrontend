@@ -1,0 +1,39 @@
+<app-navToStart></app-navToStart>
+
+<main role="main">
+  <div class="container"  >
+    <div class="row" >
+<form  [formGroup]="userRegisterForm" (ngSubmit)="register()" class="form-register">
+  <h2 class="mt-5">KAYIT OLUN İHALELERE TEKLİF VERİN!</h2>
+  <div class="form-group">
+    <label for="name">Adınız :</label>
+    <input type="text" id="name" name="name" formControlName="name" class="form-control">
+ <br> </div>
+  <div class="form-group">
+    <label for="lastName">Soyadınız :</label>
+    <input type="text" id="lastName" name="lastName" formControlName="lastName" class="form-control">
+  <br></div>
+  <div class="form-group">
+    <label for="userName">Bir kullanıcı adı belirleyin :</label>
+    <input type="text" id="userName" name="userName" formControlName="userName" class="form-control"
+      autofocus> <br>
+  </div>
+  <div class="form-group">
+    <label for="password">Bir şifre belirleyin :</label>
+    <input type="password" id="password" name="password" formControlName="password" class="form-control">
+ <br>
+  </div>
+  <div class="form-group">
+    <label for="password">Şifrenizi tekrarlayın :</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword" class="form-control" >
+ <br> </div>
+ 
+   
+   <div class="container">
+    <button class=" btn btn-success btn-block" [disabled]="!userRegisterForm.valid" type="submit ">KAYIT OL</button>
+    <button type="reset" class="btn btn-danger  btn-block" >TEMİZLE</button>
+   </div>
+</form>
+    </div>
+  </div>
+</main>

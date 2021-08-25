@@ -1,0 +1,38 @@
+<app-nav-user></app-nav-user>
+<div class="container">
+  <br>
+  <div class="table-responsive" >
+    <h2>KAYBETTİĞİNİZ İHALELER</h2>
+    <table class="table table-bordered" style="border-color: black; border: 4px solid black;">
+      <thead>
+        <tr style="font-family: monospace; ">
+          <th></th>
+          <th>İhale Numarası</th>
+          <th>İhale Başlığı</th>
+          <th>Kategori</th>
+          <th>Başlangıç Fiyatı</th>
+          <th>Ihale Durumu</th>
+          <th>Verdiğiniz Teklif</th>
+        
+         
+        
+        </tr>
+      </thead>  
+      <tbody >
+        <tr *ngFor="let bid of bids;">
+          <td><img class="img-thumbnail" src="{{bid.tender.url}}" style="border-color: black; text-align: center;" alt="image"><br> 
+          </td>
+          <td>{{bid.tenderId}}</td>
+          <td>{{bid.tender.description}}</td>
+          <td>{{bid.tender.category}}</td>    
+          <td>{{bid.tender.price}}</td>
+          <td>{{bid.tender.status}}</td>
+          <td>{{bid.bids}}</td>
+          
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>
